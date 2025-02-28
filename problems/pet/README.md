@@ -18,4 +18,4 @@
 ## Solutions
 
 - **Language:** C++
-  **File:** [a.cpp](./a.cpp)
+  **File:** [pet.cpp](./pet.cpp)

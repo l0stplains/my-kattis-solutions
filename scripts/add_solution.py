@@ -243,15 +243,15 @@ def main():
     print(f"Copied solution file to {destination_path}")
 
     # Determine language
-    language = determine_language(filename)
+    language = determine_language(new_filename)
 
     # Create or update problem README
-    create_problem_readme(problem_dir, metadata, filename,
+    create_problem_readme(problem_dir, metadata, new_filename,
                           language, update_only=updating)
     print(f"{'Updated' if updating else 'Created'} README for {problem_id}")
 
     # Update main README
-    update_main_readme(metadata, problem_id, filename)
+    update_main_readme(metadata, problem_id, new_filename)
     print(f"Updated main README with {problem_id}")
 
     print(f"\nSuccessfully added solution for '{
