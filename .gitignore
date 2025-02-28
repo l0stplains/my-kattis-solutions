@@ -1,6 +1,6 @@
 # Workspace folder (temporary work area)
 /workspace/*
-!.gitkeep
+!README.md
 
 # Language-specific ignores
 # Python
