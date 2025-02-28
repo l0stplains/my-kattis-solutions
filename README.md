@@ -9,6 +9,7 @@ For information on how to use this repository for your own journey, please see t
 <!-- SOLUTIONS_TABLE_START -->
 | Problem | Title | Difficulty | Language(s) |
 | ------- | ----- | ---------- | ----------- |
+| [cardtrick2](problems/cardtrick2) | Card Trick | 2.1 (Easy) | C++ |
 | [wizardofodds](problems/wizardofodds) | Wizard of Odds | 2.4 (Easy) | Python |
 | [vote](problems/vote) | Popular Vote | 2.0 (Easy) | C++ |
 | [timeloop](problems/timeloop) | Stuck In A Time Loop | 1.2 (Easy) | C++ |
