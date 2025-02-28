@@ -141,7 +141,7 @@ def create_problem_readme(problem_dir, metadata, filename, language, update_only
 
 
 def update_main_readme(metadata, problem_id, filename):
-    """Update the main README.md file with the new solution."""
+    """Update the main README.md file with the new solution, maintaining alphabetical order."""
     new_language = determine_language(filename)
     readme_path = 'README.md'
 
@@ -165,26 +165,27 @@ def update_main_readme(metadata, problem_id, filename):
                             len(start_marker):end_index].strip().split('\n')
     after_table = content[end_index:]
 
+    # Separate header (first two lines) from the content rows
+    header = table_content[:2] if len(table_content) >= 2 else table_content
+    rows = table_content[2:] if len(table_content) >= 2 else []
+
     # Check if this problem already exists in the table
     problem_exists = False
-    problem_line_index = -1
-    for i, line in enumerate(table_content):
+    for i, line in enumerate(rows):
         if f"| [{problem_id}]" in line:
             problem_exists = True
-            problem_line_index = i
+            # Update existing problem entry
+            parts = line.split('|')
+            if len(parts) >= 5:  # Ensure there are enough columns
+                current_languages = parts[4].strip()
+                if new_language not in current_languages:
+                    languages = f"{current_languages}, {
+                        new_language}" if current_languages else new_language
+                    parts[4] = f" {languages} "
+                    rows[i] = '|'.join(parts)
             break
 
-    if problem_exists:
-        # Update existing problem entry
-        parts = table_content[problem_line_index].split('|')
-        if len(parts) >= 5:  # Ensure there are enough columns
-            current_languages = parts[4].strip()
-            if new_language not in current_languages:
-                languages = f"{current_languages}, {
-                    new_language}" if current_languages else new_language
-                parts[4] = f" {languages} "
-                table_content[problem_line_index] = '|'.join(parts)
-    else:
+    if not problem_exists:
         # Create a new problem entry
         new_row = (
             f"| [{problem_id}](problems/{problem_id}) "
@@ -192,14 +193,18 @@ def update_main_readme(metadata, problem_id, filename):
             f"| {metadata['difficulty']} ({metadata['difficulty_category']}) "
             f"| {new_language} |"
         )
-        # Insert the new row after the header row
-        # Adjust the index if your table header spans more than two lines
-        header_lines = 2  # for header and separator
-        table_content.insert(header_lines, new_row)
+        rows.append(new_row)
+
+    # Sort rows alphabetically by problem ID
+    def extract_problem_id(row):
+        match = re.search(r'\[(.*?)\]', row)
+        return match.group(1).lower() if match else ""
+
+    sorted_rows = sorted(rows, key=extract_problem_id)
 
     # Reconstruct the updated content
-    updated_table = "\n".join(table_content)
-    new_content = "\n".join([before_table, updated_table, after_table])
+    updated_table = "\n".join(header + sorted_rows)
+    new_content = before_table + "\n" + updated_table + "\n" + after_table
 
     # Write updated content back to README
     with open(readme_path, 'w') as f:
@@ -228,9 +233,14 @@ def main():
     print(f"Fetching metadata for problem '{problem_id}'...")
     metadata = fetch_problem_metadata(problem_id)
 
-    # Copy file from workspace to problem directory
-    shutil.copy2(source_path, os.path.join(problem_dir, filename))
-    print(f"Copied solution file to {problem_dir}/{filename}")
+    # Extract the original file extension
+    _, ext = os.path.splitext(filename)
+    new_filename = problem_id + ext
+
+    # Copy file from workspace to problem directory with new filename
+    destination_path = os.path.join(problem_dir, new_filename)
+    shutil.copy2(source_path, destination_path)
+    print(f"Copied solution file to {destination_path}")
 
     # Determine language
     language = determine_language(filename)
