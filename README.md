@@ -19,6 +19,7 @@ For information on how to use this repository for your own journey, please see t
 | [battlesimulation](problems/battlesimulation) | Battle Simulation | 2.4 (Easy) | C++ |
 | [bela](problems/bela) | Bela | 1.4 (Easy) | C++ |
 | [bitbybit](problems/bitbybit) | Bit by Bit | 3.0 (Medium) | C++ |
+| [blackfriday](problems/blackfriday) | Black Friday | 2.0 (Easy) | C++ |
 | [bossbattle](problems/bossbattle) | Boss Battle | 2.0 (Easy) | C++ |
 | [bubbletea](problems/bubbletea) | Delicious Bubble Tea | 2.5 (Easy) | C++ |
 | [bungeebuilder](problems/bungeebuilder) | Bungee Builder | 3.4 (Medium) | C++ |
