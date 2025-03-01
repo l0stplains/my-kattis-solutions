@@ -49,6 +49,7 @@ For information on how to use this repository for your own journey, please see t
 | [flowshop](problems/flowshop) | Flow Shop | 2.1 (Easy) | C++ |
 | [funhouse](problems/funhouse) | Fun House | 2.0 (Easy) | C++ |
 | [gamerank](problems/gamerank) | Game Rank | 3.8 (Medium) | C++ |
+| [golombrulers](problems/golombrulers) | Golomb Rulers | 2.8 (Medium) | C++ |
 | [greedilyincreasing](problems/greedilyincreasing) | Greedily Increasing Subsequence | 1.7 (Easy) | C++ |
 | [guessinggame](problems/guessinggame) | Guessing Game | 3.1 (Medium) | C++ |
 | [hangingout](problems/hangingout) | Hanging Out on the Terrace | 1.4 (Easy) | C++ |
