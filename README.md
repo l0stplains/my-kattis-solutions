@@ -29,6 +29,7 @@ For information on how to use this repository for your own journey, please see t
 | [chess](problems/chess) | Chess | 3.3 (Medium) | C++ |
 | [circuitmath](problems/circuitmath) | Circuit Math | 2.2 (Easy) | C++ |
 | [classy](problems/classy) | A Classy Problem | 4.9 (Medium) | C++ |
+| [closestsums](problems/closestsums) | Closest Sums | 2.7 (Easy) | C++ |
 | [connectthedots](problems/connectthedots) | Connect the Dots | 3.5 (Medium) | C++ |
 | [deathstar](problems/deathstar) | Deathstar | 1.7 (Easy) | C++ |
 | [delimitersoup](problems/delimitersoup) | Delimiter Soup | 1.8 (Easy) | C++ |
