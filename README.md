@@ -28,6 +28,7 @@ For information on how to use this repository for your own journey, please see t
 | [cetiri](problems/cetiri) | Cetiri | 1.7 (Easy) | C++ |
 | [chess](problems/chess) | Chess | 3.3 (Medium) | C++ |
 | [circuitmath](problems/circuitmath) | Circuit Math | 2.2 (Easy) | C++ |
+| [classrooms](problems/classrooms) | Classrooms | 5.6 (Hard) | C++ |
 | [classy](problems/classy) | A Classy Problem | 4.9 (Medium) | C++ |
 | [closestsums](problems/closestsums) | Closest Sums | 2.7 (Easy) | C++ |
 | [connectthedots](problems/connectthedots) | Connect the Dots | 3.5 (Medium) | C++ |
