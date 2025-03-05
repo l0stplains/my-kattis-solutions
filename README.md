@@ -48,6 +48,7 @@ For information on how to use this repository for your own journey, please see t
 | [fizzbuzz](problems/fizzbuzz) | FizzBuzz | 1.5 (Easy) | C++ |
 | [flagquiz](problems/flagquiz) | Flag Quiz | 3.4 (Medium) | Python |
 | [flowshop](problems/flowshop) | Flow Shop | 2.1 (Easy) | C++ |
+| [froshweek2](problems/froshweek2) | Frosh Week | 2.2 (Easy) | C++ |
 | [funhouse](problems/funhouse) | Fun House | 2.0 (Easy) | C++ |
 | [gamerank](problems/gamerank) | Game Rank | 3.8 (Medium) | C++ |
 | [golombrulers](problems/golombrulers) | Golomb Rulers | 2.8 (Medium) | C++ |
